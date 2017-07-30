@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/halo123u/Todo-app-2.0#readme",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.15.3"
   }
 }

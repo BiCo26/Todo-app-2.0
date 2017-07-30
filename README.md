@@ -1,0 +1,1 @@
+Create a database on postgres named todo_app;
