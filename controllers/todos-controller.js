@@ -8,6 +8,14 @@ const todoController = {
             console.log(err);
             res.status(500).json(err);
         });
+    },
+    show: (req,res)=>{
+        Todo.findById(req.params.id).then((todo)=>{
+            res.json(todo);
+        }).catch(err=>{
+            console.log(err);
+            res.status(500).json(err);
+        });
     }
 }
 
