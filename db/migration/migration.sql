@@ -1,4 +1,4 @@
-\c todo_app
+-- \c todo_app
 CREATE TABLE IF NOT EXISTS todos(
     id SERIAL PRIMARY KEY,
     title TEXT,
