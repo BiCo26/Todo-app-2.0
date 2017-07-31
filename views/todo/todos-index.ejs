@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+<% include ../partials/nav %>
+    <a href="/add">Add a new todo</a>
+    <div class="todo-list">
+        <% for(todo of data){ %>
+            <div class="todo">
+                <div class="todo-heading">
+                    <h1> <%= todo.title%></h1>
+                    <h2><%= todo.currentdate %></h2>
+                </div>
+                <div class="todo-body">
+                    <h3><%= todo.content %></h3>
+                    <a href="/todos/<%=todo.id%>">info</a>
+                    <a href="/edit">edit</a>
+                    <button> delete</button>
+                </div>
+            </div>
+            <%}%>
+    </div>
+<% include ../partials/footer %>
+<% include ../partials/end %>

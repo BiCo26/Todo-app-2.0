@@ -3,7 +3,9 @@ const Todo = require('../models/todos.js');
 const todoController = {
     index: (req,res)=>{
         Todo.findAll().then((todos)=>{
-            res.json(todos);
+            res.render('todo/todos-index',{
+                data:todos
+            });
         }).catch(e=>{
             console.log(err);
             res.status(500).json(err);
@@ -11,7 +13,9 @@ const todoController = {
     },
     show: (req,res)=>{
         Todo.findById(req.params.id).then((todo)=>{
-            res.json(todo);
+            res.render('todo/single-todo',{
+                data:todo
+            });
         }).catch(err=>{
             console.log(err);
             res.status(500).json(err);

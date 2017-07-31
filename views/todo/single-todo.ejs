@@ -1,0 +1,16 @@
+<% include ../partials/header %>
+<% include ../partials/nav %>
+    <div class="todo-info">
+        <h1><%=data.title%></h1>
+        <h2>date: <%= data.currentdate %></h2>
+        <p>Description: <%=data.content %></p>
+        <div="info buttons">
+            <a href="/todos/edit">edit</a>
+            <button >delete</button>
+        </div>
+    </div>
+
+    <a href="/todos">Go Back to List</a>
+
+<% include ../partials/footer %>
+<% include ../partials/end %>
