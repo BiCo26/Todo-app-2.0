@@ -30,7 +30,6 @@ const todoController = {
         });
     },
     update :(req,res)=>{
-        console.log(req.params.id);
         Todo.update({
          title: req.body.title,
          currentdate: req.body.currentdate,
@@ -40,7 +39,16 @@ const todoController = {
         }).catch(err=>{
             console.log(err);
             res.status(500).json(err);
-        })
+        });
+    },
+    delete : (req,res)=>{
+        console.log(req.params.id);
+        Todo.delete(req.params.id).then(()=>{
+            res.redirect('/todos');
+        }).catch(err=>{
+            console.log(err);
+            res.status(500).json(err);
+        });
     }
 }
 

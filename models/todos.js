@@ -26,6 +26,10 @@ const Todo = {
         WHERE id = $4
         RETURNING *
         `,[todo.title,todo.currentdate,todo.content,id]);
+    },
+    delete: (id)=>{
+        return db.none(`DELETE from todos
+        WHERE id = $1`,[id]);
     }
 }
 
