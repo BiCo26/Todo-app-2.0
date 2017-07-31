@@ -6,7 +6,9 @@
         <p>Description: <%=data.content %></p>
         <div="info buttons">
             <a href="/todos/edit">edit</a>
-            <button >delete</button>
+        <form method="POST" action="/todos/<%=data.id %>?_method=DELETE">
+            <input type="submit" value="delete">
+        </form>
         </div>
     </div>
 

@@ -12,7 +12,9 @@
                     <h3><%= todo.content %></h3>
                     <a href="/todos/<%=todo.id%>">info</a>
                     <a href="/edit">edit</a>
-                    <button> delete</button>
+                    <form method="POST" action="/todos/<%= todo.id %>?_method=DELETE">
+                        <input type="submit" value="delete">
+                    </form>
                 </div>
             </div>
             <%}%>
