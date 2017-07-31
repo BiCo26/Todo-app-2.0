@@ -1,11 +1,11 @@
 <% include ../partials/header %>
 <% include ../partials/nav %>
     <div class="todo-info">
-        <h1><%=data.title%></h1>
+        <h1><%=data.title %></h1>
         <h2>date: <%= data.currentdate %></h2>
         <p>Description: <%=data.content %></p>
         <div="info buttons">
-            <a href="/todos/edit">edit</a>
+            <a href="/todos/edit/<%=data.id %>">edit</a>
         <form method="POST" action="/todos/<%=data.id %>?_method=DELETE">
             <input type="submit" value="delete">
         </form>

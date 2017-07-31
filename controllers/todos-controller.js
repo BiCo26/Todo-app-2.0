@@ -45,6 +45,16 @@ const todoController = {
             res.status(500).json(err);
         });
     },
+    edit :(req,res)=>{
+        Todo.findById(req.params.id).then(todo=>{
+            res.render('todo/edit-todo', {
+                data: todo
+            });
+        }).catch(err=>{
+            console.log(err);
+            res.status(500).json(err);
+        })
+    },
     delete : (req,res)=>{
         console.log(req.params.id);
         Todo.delete(req.params.id).then(()=>{

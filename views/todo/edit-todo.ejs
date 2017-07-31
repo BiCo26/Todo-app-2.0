@@ -1,0 +1,12 @@
+<% include ../partials/header %>
+<% include ../partials/nav %>
+    <form method="POST" action="/todos/<%= data.id %>?_method=PUT">
+        <input type="text" name="title" value= "<%=data.title %>" >
+        <input type="text" name="currentdate" value="<%=data.currentdate%>" >
+        <input type="text" name="content" value="<%=data.content%>">
+        <input type="submit" value="enter to do!">
+    </form>
+    <a href="/todos">Go Back to List</a>
+
+<% include ../partials/footer %>
+<% include ../partials/end %>
