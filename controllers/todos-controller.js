@@ -16,6 +16,31 @@ const todoController = {
             console.log(err);
             res.status(500).json(err);
         });
+    },
+    create: (req,res)=>{
+        Todo.create({
+            title: req.body.title,
+            currentdate: req.body.currentdate,
+            content :req.body.content    
+        }).then(()=>{
+            res.redirect('/todos');
+        }).catch(err=>{
+            console.log(err);
+            res.status(500).json(err);
+        });
+    },
+    update :(req,res)=>{
+        console.log(req.params.id);
+        Todo.update({
+         title: req.body.title,
+         currentdate: req.body.currentdate,
+         content :req.body.content      
+        }, req.params.id).then((id)=>{
+            res.redirect(`/todos/${req.params.id}`)
+        }).catch(err=>{
+            console.log(err);
+            res.status(500).json(err);
+        })
     }
 }
 
